@@ -2,7 +2,7 @@ from gtts import gTTS
 
 import os
 
-tts = gTTS(text= 'good morning', lang = 'en')
+tts = gTTS(text= '안녕, 나는 공감이야!', lang = 'ko')
 
-tts.save("good.mp3")
+tts.save("example.mp3")
 
