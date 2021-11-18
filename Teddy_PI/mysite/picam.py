@@ -6,7 +6,7 @@ from picamera.array import PiRGBArray
 from picamera import PiCamera
 
 class PiCam:
-    def __init__(self, show=True, framerate=30, width=640, height=480, brightness=65):
+    def __init__(self, show=True, framerate=35, width=640, height=480, brightness=65):
         self.size = (width, height)
         self.show = show
         self.framerate = framerate
@@ -43,7 +43,7 @@ class PiCam:
         cv2.destroyAllWindows()
 
 class MJpegStreamCam(PiCam):
-    def __init__(self, show=True, framerate=25, width=640, height=480, brightness=65):
+    def __init__(self, show=True, framerate=35, width=640, height=480, brightness=65):
         super().__init__(show=show, framerate=framerate, 
                         width=width, height=height, brightness=brightness)
 
