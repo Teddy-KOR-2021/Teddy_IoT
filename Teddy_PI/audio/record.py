@@ -32,7 +32,7 @@ def run():
         camera.capture(f'/home/pi/Teddy_PI/image/{nowtime}-{i}.jpg')
     camera.stop_preview()
     sf.write(f'/home/pi/{nowtime}.wav', recording, fs)
-
+    sleep(2)
     NEWCODE = f"aws s3 cp {nowtime}.wav s3://kd1-teddy-records-bucket2021/records/{nowtime}.wav"
     os.system(NEWCODE)
 run()
