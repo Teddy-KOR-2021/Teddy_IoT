@@ -36,8 +36,14 @@ seconds = 7
 
 # sf.write(f'{nowtime}.wav', recording, fs)
 
-def run():
+def startrun():
     
+    mp3_redata = BytesIO()
+    tts = gTTS('안녕! 반가워', lang='ko')
+    tts.write_to_fp(mp3_redata)
+    mp3_redata.seek(0)
+    startspeak = AudioSegment.from_file(mp3_redata, format="mp3")
+    play(startspeak)
     
     print("Start record")
     global now
@@ -94,4 +100,4 @@ def run():
     print("Complete")
         
 
-run()
+startrun()

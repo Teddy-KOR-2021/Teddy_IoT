@@ -1,5 +1,4 @@
 from gtts import gTTS
-import gtts
 import playsound
 import paho.mqtt.client as mqtt
 import os
@@ -32,9 +31,12 @@ def on_message(client, userdata, msg):
 mqtt_client.on_connect = on_connect
 mqtt_client.on_message = on_message
 
-try :
-    mqtt_client.connect('18.169.185.73', 1883)
-    mqtt_client.loop_start()
+def speaktd():
+    try :
+        mqtt_client.connect('18.169.185.73', 1883)
+        mqtt_client.loop_forever()
 
-except Exception as err:
-    print('에러 : %s'%err)
+    except Exception as err:
+        print('에러 : %s'%err)
+
+speaktd()
