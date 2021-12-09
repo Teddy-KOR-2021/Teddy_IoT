@@ -14,6 +14,7 @@ nowtime = str(datetime.datetime.now().timestamp())[:10]
 def Camera_capture(): # 아이 이미지 캡쳐, s3 버킷에 이미지파일 업로드
     camera = PiCamera()
     camera.resolution = (1024, 768)
+    camera.rotation = 180
 
     print("Start capture")
     camera.start_preview()

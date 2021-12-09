@@ -8,7 +8,7 @@ from pydub.playback import play
 def on_connect(client, userdata, flags, rc): # iot topic 으로 메세지 발행
     if rc == 0:
         print("Connected OK")
-        client.subscribe("iot")
+        client.subscribe("iot", 0)
     else:
         print('실패')
 
